@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BlockVariantGroups>
+
+    <BlockVariantGroup>
+      <Id Type="MyObjectBuilder_BlockVariantGroup" Subtype="ArmorHalfSlope" />
+      <Icon>Textures\GUI\Icons\Cubes\HalfSlopeCornerInverted.dds</Icon>
+      <DisplayName>DisplayName_Block_ArmorHalfSlopeCorner</DisplayName>
+      <Description>Description_LightArmor</Description>
+      <Blocks>
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="LargeBlockArmorHalfSlopeCornerInverted" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="LG_HexagonCutArmor" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="LargeBlockArmorHalfSlopeCorner" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="LargeBlockArmorHalfSlopeInverted" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="LargeHalfSlopeArmorBlock" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="LargeHalfArmorBlock" />
+		
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="SmallBlockArmorHalfSlopeCornerInverted" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="SG_HexagonCutArmor" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="SmallBlockArmorHalfSlopeInverted" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="SmallBlockArmorHalfSlopeCorner" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="HalfSlopeArmorBlock" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="HalfArmorBlock" />
+      </Blocks>
+    </BlockVariantGroup>
+
+    <BlockVariantGroup>
+      <Id Type="MyObjectBuilder_BlockVariantGroup" Subtype="HeavyArmorHalfSlope" />
+      <Icon>Textures\GUI\Icons\Cubes\HeavyHalfSlopeCorner.dds</Icon>
+      <DisplayName>DisplayName_Block_HeavyArmorHalfSlopeCorner</DisplayName>
+      <Description>Description_HeavyArmor</Description>
+      <Blocks>
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="LargeBlockHeavyArmorHalfSlopeCornerInverted" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="LG_HeavyHexagonCutArmor" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="LargeBlockHeavyArmorHalfSlopeCorner" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="LargeBlockHeavyArmorHalfSlopeInverted" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="LargeHeavyHalfSlopeArmorBlock" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="LargeHeavyHalfArmorBlock" />
+		
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="SmallBlockHeavyArmorHalfSlopeCornerInverted" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="SG_HeavyHexagonCutArmor" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="SmallBlockHeavyArmorHalfSlopeInverted" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="SmallBlockHeavyArmorHalfSlopeCorner" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="HalfHeavySlopeArmorBlock" />
+        <Block Type="MyObjectBuilder_CubeBlock" Subtype="HeavyHalfArmorBlock" />
+      </Blocks>
+    </BlockVariantGroup>
+
+  </BlockVariantGroups>
+</Definitions>

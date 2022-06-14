@@ -348,3 +348,19 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Manually added rules
+*.blend1
+*.lnk
+*.old
+
+/Assets/
+/SpaceEngineers/
+/Workshop/
+/LocalMods/
+/SEWhitelistChecker.dll
+
+/Content/*/Models/
+/Content/*/data/scripts/
+/InGameScripts/*/MDK/*
+!/InGameScripts/*/MDK/MDK.options.props

@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<CubeBlocks>
+		<Definition>
+			<Id>
+				<TypeId>CubeBlock</TypeId>
+				<SubtypeId>SG_HeavyHexagonCutArmor</SubtypeId>
+			</Id>
+            <BlockPairName>HeavyHexagonCutArmor</BlockPairName>
+			<DisplayName>{LOC:DisplayName_HeavyHexagonCutArmor}</DisplayName>
+			<Description>Description_HeavyArmor</Description>
+			<Icon>Textures\HeavyHexagonCutArmor.dds</Icon>
+			<CubeSize>Small</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1"/>
+			<ModelOffset x="0" y="0" z="0"/>
+			<Model>Models\Cubes\small\SG_HeavyHexagonCutArmor.mwm</Model>
+			<Components>
+                <Component Subtype="SteelPlate" Count="2" />
+                <Component Subtype="MetalGrid" Count="1" />
+                <Component Subtype="SteelPlate" Count="1" />
+			</Components>
+			<CriticalComponent Subtype="SteelPlate" Index="1"/>
+			<MountPoints>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Back" StartX="0.50" StartY="0.00" EndX="1.00" EndY="0.50"/>
+				<MountPoint Side="Left" StartX="0.00" StartY="0.00" EndX="0.50" EndY="0.50"/>
+				<MountPoint Side="Right" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Top" StartX="0.50" StartY="0.50" EndX="1.00" EndY="1.00"/>
+				<MountPoint Side="Bottom" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\Cubes\small\SG_HeavyHexagonCutArmor_BS1.mwm"/>
+				<Model BuildPercentUpperBound="0.67" File="Models\Cubes\small\SG_HeavyHexagonCutArmor_BS2.mwm"/>
+				<Model BuildPercentUpperBound="1.00" File="Models\Cubes\small\SG_HeavyHexagonCutArmor_BS3.mwm"/>
+			</BuildProgressModels>
+			<MirroringX>MinusHalfY</MirroringX>
+			<MirroringY>MinusHalfX</MirroringY>
+			<MirroringZ>HalfY</MirroringZ>
+			<PhysicsOption>Convex</PhysicsOption>
+			<GuiVisible>false</GuiVisible>
+            <EdgeType>Heavy</EdgeType>
+            <BuildTimeSeconds>3</BuildTimeSeconds>
+            <DisassembleRatio>2.5</DisassembleRatio>
+            <PCU>1</PCU>
+            <PCUConsole>2</PCUConsole>
+		</Definition>
+	</CubeBlocks>
+</Definitions>

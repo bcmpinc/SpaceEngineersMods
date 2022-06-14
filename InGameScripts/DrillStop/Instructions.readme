@@ -1,0 +1,5 @@
+﻿Drill Auto Shutoff
+------------------
+
+Automatically turns off the drills on your ship when their inventory is filled above the configured threshold.
+The program needs to be recompiled whenever new drills are added.

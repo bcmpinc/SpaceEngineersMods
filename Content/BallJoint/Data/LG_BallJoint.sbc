@@ -1,0 +1,93 @@
+<?xml version="1.0" ?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<CubeBlocks>
+        <Definition xsi:type="MyObjectBuilder_MotorStatorDefinition">
+            <Id>
+                <TypeId>MotorStator</TypeId>
+                <SubtypeId>LargeBallJoint</SubtypeId>
+            </Id>
+            <DisplayName>Large Ball Joint</DisplayName>
+            <Icon>Textures\GUI\Icons\Cubes\motor.dds</Icon>
+            <Description>Description_Rotor</Description>
+            <CubeSize>Large</CubeSize>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="1" y="2" z="1" />
+            <ModelOffset x="0" y="-1.25" z="0" />
+            <Model>Models\Cubes\Large\MotorStator.mwm</Model>
+            <Components>
+                <Component Subtype="SteelPlate" Count="10" />
+                <Component Subtype="Construction" Count="10" />
+                <Component Subtype="LargeTube" Count="4" />
+                <Component Subtype="Motor" Count="4" />
+                <Component Subtype="Computer" Count="2" />
+                <Component Subtype="SteelPlate" Count="5" />
+            </Components>
+            <CriticalComponent Subtype="Computer" Index="0" />
+            <MountPoints>
+                <MountPoint Side="Bottom" StartX="0.2" StartY="0.2" EndX="0.8" EndY="0.8" Default="true" />
+                <MountPoint Side="Left" StartX="0.25" StartY="0" EndX="0.75" EndY="0.61" />
+                <MountPoint Side="Right" StartX="0.25" StartY="0" EndX="0.75" EndY="0.61" />
+                <MountPoint Side="Front" StartX="0.25" StartY="0" EndX="0.75" EndY="0.61" />
+                <MountPoint Side="Back" StartX="0.25" StartY="0" EndX="0.75" EndY="0.61" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\MotorStatorConstruction_1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\MotorStatorConstruction_2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\MotorStatorConstruction_3.mwm" />
+            </BuildProgressModels>
+            <BlockPairName>BallJoint</BlockPairName>
+            <MirroringY>Z</MirroringY>
+            <MirroringZ>Y</MirroringZ>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>20</BuildTimeSeconds>
+            <PrimarySound>BlockRotor</PrimarySound>
+            <RotorPart>BallSocket</RotorPart>
+            <GuiVisible>false</GuiVisible>
+            <DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+            <DamagedSound>ParticleHeavyMech</DamagedSound>
+            <SafetyDetach>5</SafetyDetach>
+            <SafetyDetachMax>5</SafetyDetachMax>
+            <DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+            <DestroySound>WepSmallWarheadExpl</DestroySound>
+            <PCU>100</PCU>
+            <IsAirTight>false</IsAirTight>
+        </Definition>
+        <Definition>
+            <Id>
+                <TypeId>MotorRotor</TypeId>
+                <SubtypeId>LargeBallSocket</SubtypeId>
+            </Id>
+            <DisplayName>Large Ball Socket</DisplayName>
+            <Icon>Textures\GUI\Icons\Cubes\RotorPart.dds</Icon>
+            <Description>Description_RotorPart</Description>
+            <BlockPairName>BallSocket</BlockPairName>
+            <CubeSize>Large</CubeSize>
+            <GuiVisible>false</GuiVisible>
+            <BlockTopology>TriangleMesh</BlockTopology>
+            <Size x="1" y="1" z="1" />
+            <ModelOffset x="0" y="0" z="0" />
+            <Model>Models\Cubes\Large\MotorRotor.mwm</Model>
+            <UseModelIntersection>true</UseModelIntersection>
+            <Components>
+                <!-- top part  cost is not balance-only issue,  rotor "overtravel" issue  when rotation limits are set is reduced by adding more weight into top part -->
+                <Component Subtype="SteelPlate" Count="30" />
+                <Component Subtype="LargeTube" Count="6" />
+            </Components>
+            <CriticalComponent Subtype="SteelPlate" Index="0" />
+            <MountPoints>
+                <MountPoint Side="Top" StartX="0" StartY="0" EndX="1" EndY="1" Default="true" />
+            </MountPoints>
+            <BuildProgressModels>
+                <Model BuildPercentUpperBound="0.33" File="Models\Cubes\Large\MotorRotorConstruction_1.mwm" />
+                <Model BuildPercentUpperBound="0.66" File="Models\Cubes\Large\MotorRotorConstruction_2.mwm" />
+                <Model BuildPercentUpperBound="1.00" File="Models\Cubes\Large\MotorRotorConstruction_3.mwm" />
+            </BuildProgressModels>
+            <MirroringY>Z</MirroringY>
+            <MirroringZ>Y</MirroringZ>
+            <EdgeType>Light</EdgeType>
+            <BuildTimeSeconds>5</BuildTimeSeconds>
+            <PCU>1</PCU>
+            <IsAirTight>false</IsAirTight>
+        </Definition>
+	</CubeBlocks>
+</Definitions>

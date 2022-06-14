@@ -1,0 +1,9 @@
+﻿[*.cs]
+
+# ProhibitedMemberRuleM: Prohibited Type Or Member(Mod script)
+dotnet_diagnostic.ProhibitedMemberRuleM.severity = none
+dotnet_diagnostic.ProhibitedMemberRuleI.severity = none
+
+[*.{cs,vb}]
+tab_width=2
+indent_size=2

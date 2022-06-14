@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ResearchBlocks>
+
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="CubeBlock" Subtype="LG_HexagonCutArmor" />
+      <UnlockedByGroups>
+        <GroupSubtype>1</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="CubeBlock" Subtype="SG_HexagonCutArmor" />
+      <UnlockedByGroups>
+        <GroupSubtype>1</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="CubeBlock" Subtype="LG_HeavyHexagonCutArmor" />
+      <UnlockedByGroups>
+        <GroupSubtype>1</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+
+    <ResearchBlock xsi:type="ResearchBlock">
+      <Id Type="CubeBlock" Subtype="SG_HeavyHexagonCutArmor" />
+      <UnlockedByGroups>
+        <GroupSubtype>1</GroupSubtype>
+      </UnlockedByGroups>
+    </ResearchBlock>
+
+  </ResearchBlocks>
+</Definitions>
