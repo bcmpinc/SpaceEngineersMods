@@ -1,3 +1,6 @@
 [submodule "Plugins/PreventBlockResize"]
 	path = Plugins/PreventBlockResize
 	url = https://github.com/bcmpinc/SE-PreventBlockResize.git
+[submodule "Plugins/PluginHub"]
+	path = Plugins/PluginHub
+	url = https://github.com/bcmpinc/SE-PluginHub.git
