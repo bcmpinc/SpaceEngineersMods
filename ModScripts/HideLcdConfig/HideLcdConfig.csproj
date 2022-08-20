@@ -106,7 +106,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>set dest=..\..\Content\$(ProjectName)\Data\scripts
+    <PostBuildEvent>set dest=$(ProjectDir)\..\..\Content\$(ProjectName)\Data\scripts
 mkdir %25dest%25
 del %25dest%25\*.cs
 copy $(ProjectDir)*.cs %25dest%25</PostBuildEvent>
