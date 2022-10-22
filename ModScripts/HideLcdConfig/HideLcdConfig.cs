@@ -11,7 +11,7 @@ using VRage.Utils;
 namespace HideLcdConfig {
   [MySessionComponentDescriptor(MyUpdateOrder.NoUpdate)]
   public class HideLcdConfig : MySessionComponentBase {
-    HashSet<string> Filtered = new HashSet<string>("Title,Rotate,PanelList,Content,Script,ScriptForegroundColor,ScriptBackgroundColor,ShowTextPanel,Font,FontSize,FontColor,alignment,TextPaddingSlider,BackgroundColor,ImageList,SelectTextures,ChangeIntervalSlider,SelectedImageList,RemoveSelectedTextures,PreserveAspectRatio".Split(','));
+    readonly HashSet<string> Filtered = new HashSet<string>("Title,Rotate,PanelList,Content,Script,ScriptForegroundColor,ScriptBackgroundColor,ShowTextPanel,Font,FontSize,FontColor,alignment,TextPaddingSlider,BackgroundColor,ImageList,SelectTextures,ChangeIntervalSlider,SelectedImageList,RemoveSelectedTextures,PreserveAspectRatio".Split(','));
     IMyTerminalControl[] AddedControls;
     bool ShowState = false;
 
