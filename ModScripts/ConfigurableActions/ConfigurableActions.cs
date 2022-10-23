@@ -16,7 +16,7 @@ namespace ConfigurableActions {
   public class ConfigurableActions : MySessionComponentBase {
     const string SECTION = "ConfigurableActions";
 
-    float getConfigValue(IMyTerminalBlock b, string name, float def) {
+    static public float getConfigValue(IMyTerminalBlock b, string name, float def) {
       var ini = new MyIni();
       if (!ini.TryParse(b.CustomData)) {
         // In case of parse error, return default.
@@ -43,12 +43,12 @@ namespace ConfigurableActions {
       }
     }
 
-    float zapsmall(float value) {
+    static public float zapsmall(float value) {
       if (-1e-5 < value && value < 1e-5) return 0;
       return value;
     }
 
-    void wrapper<T>(IMyTerminalAction act, System.Func<T,float,bool> applicator, string name, float def) where T : IMyTerminalBlock {
+    static public void wrapper<T>(IMyTerminalAction act, System.Func<T,float,bool> applicator, string name, float def) where T : IMyTerminalBlock {
       var old = act.Action;
       act.Action = (IMyTerminalBlock b) => {
         if (b is T) {
