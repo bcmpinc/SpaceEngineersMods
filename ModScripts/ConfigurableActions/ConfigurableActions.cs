@@ -13,7 +13,7 @@ using VRage.Utils;
 
 namespace ConfigurableActions {
   [MySessionComponentDescriptor(MyUpdateOrder.NoUpdate)]
-  public class ConfigurableActions : MySessionComponentBase {
+  public class ConfigurableActionsSession : MySessionComponentBase {
     const string SECTION = "ConfigurableActions";
 
     static public float getConfigValue(IMyTerminalBlock b, string name, float def) {
@@ -90,6 +90,8 @@ namespace ConfigurableActions {
           case "DecreaseTriggerDelay": wrapper(act, (IMyTimerBlock b, float value) => {if (value == 0) return false; b.TriggerDelay = System.Math.Max(1, b.TriggerDelay - value); return true; }, "delay step", 0.0f); break; 
         }
       }
+
+      ConfigurableActions.SmartPiston.global_init();
     }
   }
 }

@@ -13,6 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
+	<LangVersion>6</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -104,12 +105,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigurableActions.cs" />
+    <Compile Include="SmartPiston.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>set dest=$(ProjectDir)\..\..\Content\$(ProjectName)\Data\scripts
-mkdir %25dest%25
-del %25dest%25\*.cs
-copy $(ProjectDir)*.cs %25dest%25</PostBuildEvent>
+mkdir %25dest%25\$(ProjectName)
+del %25dest%25\$(ProjectName)\*.cs
+copy $(ProjectDir)*.cs %25dest%25\$(ProjectName)</PostBuildEvent>
   </PropertyGroup>
 </Project>
