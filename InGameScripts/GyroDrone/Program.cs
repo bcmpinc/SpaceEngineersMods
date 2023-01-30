@@ -66,6 +66,7 @@ namespace IngameScript {
     }
 
     public void Main(string argument, UpdateType updateSource) {
+      text.WriteText("", false);
       var mass = controller.CalculateShipMass().PhysicalMass;
       if (mass == 0) {
         thrusters.ForEach(x => x.ThrustOverridePercentage = 0);
@@ -81,13 +82,20 @@ namespace IngameScript {
       var thrust = thrusters.Sum(x=>x.MaxEffectiveThrust);
       var max_lift = thrust / mass;
       var fraction = (float)(Vector3D.Dot(controller.WorldMatrix.Down, acceleration) / max_lift);
-      text.WriteText(fraction.ToString()+"\n");
 
       thrusters.ForEach(x => x.ThrustOverridePercentage = fraction);
+
+      acceleration.Normalize();
+      var pitch = (float)(Vector3D.Dot(controller.WorldMatrix.Forward, acceleration));
+      var roll  = (float)(Vector3D.Dot(controller.WorldMatrix.Right,   acceleration));
+      Echo("Pitch {0}\nRoll {1}", pitch, roll);
+      text.WriteText(String.Format("Pitch {0}\nRoll {1}\n", pitch, roll));
       gyros.ForEach(x => {
         x.Enabled = true;
         x.GyroOverride = true;
         x.Yaw = controller.RollIndicator * (float)RotateSpeed;
+        x.Pitch = pitch * 5;
+        x.Roll  = roll  * 5;
       });
     }
   }
