@@ -20,10 +20,12 @@ using VRageMath;
 
 namespace IngameScript {
   partial class Program : MyGridProgram {
+    public new void Echo(string format, params object[] args) => base.Echo(String.Format(format, args));
 
-    IMyShipController       controller;
-    List<IMyGyro>           gyros      = new List<IMyGyro>();
-    List<IMyThrust>         thrusters  = new List<IMyThrust>();
+    IMyShipController controller;
+    IMyTextSurface text;
+    List<IMyGyro>     gyros      = new List<IMyGyro>();
+    List<IMyThrust>   thrusters  = new List<IMyThrust>();
 
     public bool same_subgrid(IMyTerminalBlock block) {
       return Me.CubeGrid == block.CubeGrid;
@@ -31,7 +33,7 @@ namespace IngameScript {
 
     public void assert(bool check, string error) {
       if (check) return;
-      Echo("ERROR: " + error);
+      Echo("ERROR: {0}.", error);
       Runtime.UpdateFrequency = 0;
       throw new Exception();
     }
@@ -44,6 +46,7 @@ namespace IngameScript {
       GridTerminalSystem.GetBlocksOfType(controllers, same_subgrid); assert(gyros.Count > 0, "Missing ship controllers");
 
       controller = controllers[0];
+      text = Me.GetSurface(1);
 
       Runtime.UpdateFrequency = UpdateFrequency.Update1;
     }
@@ -52,22 +55,32 @@ namespace IngameScript {
       // Called when the program needs to save its state. Use
       // this method to save your state to the Storage field
       // or some other means. 
-      // 
-      // This method is optional and can be removed if not
-      // needed.
     }
 
     public void Main(string argument, UpdateType updateSource) {
+      var mass = controller.CalculateShipMass().PhysicalMass;
+      if (mass == 0) {
+        thrusters.ForEach(x => x.ThrustOverridePercentage = 0);
+        gyros.ForEach(x => x.Enabled = false);
+        return;
+      }
+
       var position = controller.GetPosition();
       var gravity = controller.GetNaturalGravity();
-      
       var thrust = thrusters.Sum(x=>x.MaxEffectiveThrust);
-      var mass = controller.CalculateShipMass().PhysicalMass;
       var max_lift = thrust / mass;
 
+      var vel = controller.GetShipVelocities();
+      gravity *= (1+controller.MoveIndicator.Y);
+      gravity += vel.LinearVelocity * 3.0;
+
       var fraction = (float)(gravity.Length() / max_lift);
+      text.WriteText(fraction.ToString());
 
       thrusters.ForEach(x => x.ThrustOverridePercentage = fraction);
+      gyros.ForEach(x => { 
+        //x.Yaw = controller.RollIndicator;
+      });
     }
   }
 }
