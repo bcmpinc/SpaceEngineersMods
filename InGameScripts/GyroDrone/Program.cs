@@ -20,6 +20,10 @@ using VRageMath;
 
 namespace IngameScript {
   partial class Program : MyGridProgram {
+    const double InnertiaDampingFactor = 3.0;
+    const double RotateSpeed = 10.0;
+    const double MoveSpeed = 10.0;
+
     public new void Echo(string format, params object[] args) => base.Echo(String.Format(format, args));
 
     IMyShipController controller;
@@ -46,7 +50,11 @@ namespace IngameScript {
       GridTerminalSystem.GetBlocksOfType(controllers, same_subgrid); assert(gyros.Count > 0, "Missing ship controllers");
 
       controller = controllers[0];
+      controller.ControlThrusters = true; // Fixes overridden thrusters being disabled during ship control.
+
       text = Me.GetSurface(1);
+      text.ContentType = ContentType.TEXT_AND_IMAGE;
+      text.FontSize = 6;
 
       Runtime.UpdateFrequency = UpdateFrequency.Update1;
     }
@@ -66,20 +74,20 @@ namespace IngameScript {
       }
 
       var position = controller.GetPosition();
-      var gravity = controller.GetNaturalGravity();
+      var acceleration = controller.GetNaturalGravity();
+      acceleration += controller.GetShipVelocities().LinearVelocity * InnertiaDampingFactor;
+      acceleration -= Vector3D.TransformNormal(controller.MoveIndicator, controller.WorldMatrix) * MoveSpeed;
+
       var thrust = thrusters.Sum(x=>x.MaxEffectiveThrust);
       var max_lift = thrust / mass;
-
-      var vel = controller.GetShipVelocities();
-      gravity *= (1+controller.MoveIndicator.Y);
-      gravity += vel.LinearVelocity * 3.0;
-
-      var fraction = (float)(gravity.Length() / max_lift);
-      text.WriteText(fraction.ToString());
+      var fraction = (float)(Vector3D.Dot(controller.WorldMatrix.Down, acceleration) / max_lift);
+      text.WriteText(fraction.ToString()+"\n");
 
       thrusters.ForEach(x => x.ThrustOverridePercentage = fraction);
-      gyros.ForEach(x => { 
-        //x.Yaw = controller.RollIndicator;
+      gyros.ForEach(x => {
+        x.Enabled = true;
+        x.GyroOverride = true;
+        x.Yaw = controller.RollIndicator * (float)RotateSpeed;
       });
     }
   }
