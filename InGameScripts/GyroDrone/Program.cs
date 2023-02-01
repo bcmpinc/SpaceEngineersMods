@@ -22,7 +22,8 @@ namespace IngameScript {
   partial class Program : MyGridProgram {
     const double InnertiaDampingFactor = 3.0;
     const double RotateSpeed = 10.0;
-    const double MoveSpeed = 10.0;
+    const double MoveSpeed = 5.0;
+    const double GyroFactor = 5.0;
 
     public new void Echo(string format, params object[] args) => base.Echo(String.Format(format, args));
 
@@ -37,7 +38,7 @@ namespace IngameScript {
 
     public void assert(bool check, string error) {
       if (check) return;
-      Echo("ERROR: {0}.", error);
+      Echo("ERROR: {0}.\n\n", error);
       Runtime.UpdateFrequency = 0;
       throw new Exception();
     }
@@ -86,16 +87,16 @@ namespace IngameScript {
       thrusters.ForEach(x => x.ThrustOverridePercentage = fraction);
 
       acceleration.Normalize();
-      var pitch = (float)(Vector3D.Dot(controller.WorldMatrix.Forward, acceleration));
-      var roll  = (float)(Vector3D.Dot(controller.WorldMatrix.Right,   acceleration));
+      var pitch = -(float)(Vector3D.Dot(controller.WorldMatrix.Forward, acceleration) * GyroFactor);
+      var roll  = -(float)(Vector3D.Dot(controller.WorldMatrix.Right,   acceleration) * GyroFactor);
       Echo("Pitch {0}\nRoll {1}", pitch, roll);
       text.WriteText(String.Format("Pitch {0}\nRoll {1}\n", pitch, roll));
       gyros.ForEach(x => {
         x.Enabled = true;
         x.GyroOverride = true;
         x.Yaw = controller.RollIndicator * (float)RotateSpeed;
-        x.Pitch = pitch * 5;
-        x.Roll  = roll  * 5;
+        x.Pitch = pitch;
+        x.Roll  = roll;
       });
     }
   }
