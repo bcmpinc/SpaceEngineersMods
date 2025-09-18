@@ -105,7 +105,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigurableActions.cs" />
-    <Compile Include="SmartPiston.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -359,6 +359,7 @@ MigrationBackup/
 /Workshop/
 /LocalMods/
 /SEWhitelistChecker.dll
+/old/
 
 /Content/*/Models/
 /Content/*/data/scripts/

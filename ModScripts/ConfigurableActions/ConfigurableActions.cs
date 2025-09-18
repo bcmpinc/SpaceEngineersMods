@@ -90,8 +90,6 @@ namespace ConfigurableActions {
           case "DecreaseTriggerDelay": wrapper(act, (IMyTimerBlock b, float value) => {if (value == 0) return false; b.TriggerDelay = System.Math.Max(1, b.TriggerDelay - value); return true; }, "delay step", 0.0f); break; 
         }
       }
-
-      ConfigurableActions.SmartPiston.global_init();
     }
   }
 }
