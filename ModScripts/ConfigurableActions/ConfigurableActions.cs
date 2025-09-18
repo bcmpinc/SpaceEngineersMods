@@ -74,7 +74,7 @@ namespace ConfigurableActions {
         }
       }
       
-      MyAPIGateway.TerminalControls.GetActions<IMyMotorAdvancedStator>(out actions);
+      MyAPIGateway.TerminalControls.GetActions<IMyMotorStator>(out actions);
       foreach (var act in actions) {
         switch(act.Id) {
           case "IncreaseVelocity": wrapper(act, (IMyMotorStator b, float value) => {b.TargetVelocityRPM = zapsmall(b.TargetVelocityRPM + value); return true; }, "velocity step", 3.0f); break; 
@@ -90,6 +90,15 @@ namespace ConfigurableActions {
           case "DecreaseTriggerDelay": wrapper(act, (IMyTimerBlock b, float value) => {if (value == 0) return false; b.TriggerDelay = System.Math.Max(1, b.TriggerDelay - value); return true; }, "delay step", 0.0f); break; 
         }
       }
+
+      log_actions<IMyPistonBase>();
+      log_actions<IMyMotorStator>();
+      log_actions<IMyTimerBlock>();
+      log_actions<IMyWheel>();
+      log_actions<IMyRadioAntenna>();
+      log_actions<IMyMotorSuspension>();
+      log_actions<IMyGyro>();
+      log_actions<IMyJumpDrive>();
     }
   }
 }
