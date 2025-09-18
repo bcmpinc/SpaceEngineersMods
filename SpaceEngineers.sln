@@ -32,6 +32,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GyroDrone", "InGameScripts\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DamageMonitor", "ModScripts\DamageMonitor\DamageMonitor.csproj", "{D33B6A32-237D-4F8C-8C65-9C5204B5A5E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonCutArmor", "ModScripts\HexagonCutArmor\HexagonCutArmor.csproj", "{9BD34B21-58C4-4ADA-9675-DE020E2179C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -70,6 +72,10 @@ Global
 		{D33B6A32-237D-4F8C-8C65-9C5204B5A5E0}.Debug|x64.Build.0 = Debug|x64
 		{D33B6A32-237D-4F8C-8C65-9C5204B5A5E0}.Release|x64.ActiveCfg = Debug|x64
 		{D33B6A32-237D-4F8C-8C65-9C5204B5A5E0}.Release|x64.Build.0 = Debug|x64
+		{9BD34B21-58C4-4ADA-9675-DE020E2179C0}.Debug|x64.ActiveCfg = Debug|x64
+		{9BD34B21-58C4-4ADA-9675-DE020E2179C0}.Debug|x64.Build.0 = Debug|x64
+		{9BD34B21-58C4-4ADA-9675-DE020E2179C0}.Release|x64.ActiveCfg = Release|x64
+		{9BD34B21-58C4-4ADA-9675-DE020E2179C0}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +90,7 @@ Global
 		{EF032482-19E4-4747-AD0E-9D1EFCB5B6CB} = {618E1C84-71B8-4EFB-A240-22379D834190}
 		{74CFD263-7E88-4FD9-B97E-974E945AB196} = {2F79B81C-F4A2-44F8-ABED-136C6494A8D3}
 		{D33B6A32-237D-4F8C-8C65-9C5204B5A5E0} = {618E1C84-71B8-4EFB-A240-22379D834190}
+		{9BD34B21-58C4-4ADA-9675-DE020E2179C0} = {618E1C84-71B8-4EFB-A240-22379D834190}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3E989DE0-8E65-4930-B1B1-8BD1AA606232}
