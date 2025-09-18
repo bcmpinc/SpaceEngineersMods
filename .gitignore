@@ -353,6 +353,7 @@ MigrationBackup/
 *.blend1
 *.lnk
 *.old
+*.local.ini
 
 /Assets/
 /SpaceEngineers/

@@ -120,6 +120,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		InGameScripts\Do\Do.projitems*{61eba249-19f3-48b6-a25b-a4cee90168ba}*SharedItemsImports = 13
-		InGameScripts\Do\Do.projitems*{ee9464fe-5e09-459e-9a7c-cecfa5519df6}*SharedItemsImports = 4
+		InGameScripts\Do\Do.projitems*{ee9464fe-5e09-459e-9a7c-cecfa5519df6}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal
