@@ -14,11 +14,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Launchpad", "InGameScripts\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrillAutoShutoff", "InGameScripts\DrillStop\DrillAutoShutoff.csproj", "{C519988E-8257-4D13-9E85-67D2FCBD423A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HideLcdConfig", "ModScripts\HideLcdConfig\HideLcdConfig.csproj", "{869196D1-52A3-4012-8E50-D355CFD4DB2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HideLcdConfig", "Mods\HideLcdConfig\HideLcdConfig.csproj", "{869196D1-52A3-4012-8E50-D355CFD4DB2C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PreventBlockResize", "Plugins\PreventBlockResize\PreventBlockResize.csproj", "{98282ACA-094D-44A2-873C-C7B280707B50}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InGame", "InGame", "{2F79B81C-F4A2-44F8-ABED-136C6494A8D3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InGameScripts", "InGameScripts", "{2F79B81C-F4A2-44F8-ABED-136C6494A8D3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mods", "Mods", "{618E1C84-71B8-4EFB-A240-22379D834190}"
 EndProject
@@ -26,13 +26,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{92D4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoMine", "InGameScripts\AutoMine\AutoMine.csproj", "{2AC38F5B-6D6F-4707-A67B-8FF655FEF973}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurableActions", "ModScripts\ConfigurableActions\ConfigurableActions.csproj", "{EF032482-19E4-4747-AD0E-9D1EFCB5B6CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurableActions", "Mods\ConfigurableActions\ConfigurableActions.csproj", "{EF032482-19E4-4747-AD0E-9D1EFCB5B6CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GyroDrone", "InGameScripts\GyroDrone\GyroDrone.csproj", "{74CFD263-7E88-4FD9-B97E-974E945AB196}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DamageMonitor", "ModScripts\DamageMonitor\DamageMonitor.csproj", "{D33B6A32-237D-4F8C-8C65-9C5204B5A5E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DamageMonitor", "Mods\DamageMonitor\DamageMonitor.csproj", "{D33B6A32-237D-4F8C-8C65-9C5204B5A5E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonCutArmor", "ModScripts\HexagonCutArmor\HexagonCutArmor.csproj", "{9BD34B21-58C4-4ADA-9675-DE020E2179C0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexagonCutArmor", "Mods\HexagonCutArmor\HexagonCutArmor.csproj", "{9BD34B21-58C4-4ADA-9675-DE020E2179C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
